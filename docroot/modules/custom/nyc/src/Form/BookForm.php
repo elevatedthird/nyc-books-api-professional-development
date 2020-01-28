@@ -78,12 +78,12 @@ class BookForm extends FormBase {
         $node = \Drupal::entityTypeManager()
           ->getStorage('node')
           ->loadByProperties(['title' => $list, 'type' => 'list']);
-      } catch (\Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException $e) {
-      } catch (\Drupal\Component\Plugin\Exception\PluginNotFoundException $e) {
+      } catch (InvalidPluginDefinitionException $e) {
+      } catch (PluginNotFoundException $e) {
       }
       $node = reset($node);
       //Code to update or create job opening on cron run
-      $queue = \Drupal::queue('nyc_upsert_book_cron');
+      $queue = \Drupal::queue('nyc_upsert_book_manual');
       if ($node == false) {
         $queue->createItem([$list => NULL]);
       } else {
