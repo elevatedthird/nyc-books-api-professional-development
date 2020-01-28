@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: monthly_backup
+label: 'Monthly backup'
+enabled: true
+keep: 12
+period: 2419200
+cron: null
+source_id: default_db
+destination_id: private_files
+settings_profile_id: null

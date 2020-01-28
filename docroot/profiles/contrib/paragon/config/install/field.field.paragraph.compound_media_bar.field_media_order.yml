@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media_order
+    - paragraphs.paragraphs_type.compound_media_bar
+  module:
+    - options
+id: paragraph.compound_media_bar.field_media_order
+field_name: field_media_order
+entity_type: paragraph
+bundle: compound_media_bar
+label: 'Media Order'
+description: 'The source order of the media item. This controls whether the media item appears first or second in mobile view.'
+required: true
+translatable: false
+default_value:
+  -
+    value: first
+default_value_callback: ''
+settings: {  }
+field_type: list_string

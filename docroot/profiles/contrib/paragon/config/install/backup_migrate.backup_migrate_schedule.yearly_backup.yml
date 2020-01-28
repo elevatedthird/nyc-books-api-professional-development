@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: yearly_backup
+label: 'Yearly backup'
+enabled: true
+keep: null
+period: 31449600
+cron: null
+source_id: entire_site
+destination_id: private_files
+settings_profile_id: null

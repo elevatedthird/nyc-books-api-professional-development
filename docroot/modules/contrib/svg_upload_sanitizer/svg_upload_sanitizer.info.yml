@@ -1,0 +1,12 @@
+name: 'SVG Upload Sanitizer'
+description: 'Sanitize SVG file at the upload'
+core: 8.x
+type: module
+package: Media
+dependencies:
+  - drupal:file
+
+# Information added by Drupal.org packaging script on 2019-09-22
+version: '8.x-1.0-alpha2'
+project: 'svg_upload_sanitizer'
+datestamp: 1569167601

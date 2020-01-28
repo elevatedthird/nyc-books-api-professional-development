@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_update_N().
+ */
+function ckeditorheight_update_8000(&$sandbox) {
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $moduleInstaller */
+  $moduleInstaller = \Drupal::service("module_installer");
+  $moduleInstaller->install(['readmehelp']);
+}

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: main_phone_number
+label: 'Main Phone Number'
+fieldset: 'Phone Numbers'
+multiple: false

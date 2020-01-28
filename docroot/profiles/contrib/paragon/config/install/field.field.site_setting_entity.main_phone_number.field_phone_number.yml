@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_phone_number
+    - site_settings.site_setting_entity_type.main_phone_number
+  module:
+    - telephone
+id: site_setting_entity.main_phone_number.field_phone_number
+field_name: field_phone_number
+entity_type: site_setting_entity
+bundle: main_phone_number
+label: 'Phone Number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

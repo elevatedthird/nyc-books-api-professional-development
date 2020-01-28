@@ -1,0 +1,10 @@
+name: Paragon Themekit
+type: theme
+description: 'Placeholder parent theme built for the Paragon distribution of Drupal 8. DO NOT install this theme, and instead use the starterkit theme contained within. See the README for for information.'
+core: 8.x
+hidden: true
+
+# Information added by Drupal.org packaging script on 2019-12-05
+version: '8.x-1.0-alpha8'
+project: 'paragon_themekit'
+datestamp: 1575587890

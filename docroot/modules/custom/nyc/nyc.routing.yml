@@ -1,0 +1,14 @@
+nyc.content:
+  path: '/hello'
+  defaults:
+    _controller: '\Drupal\nyc\Controller\HelloController::content'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'
+nyc.book_form:
+  path: '/admin/config/services/nyc'
+  defaults:
+    _form: '\Drupal\nyc\Form\BookForm'
+    _title: 'Book Form'
+  requirements:
+    _permission: 'access content'

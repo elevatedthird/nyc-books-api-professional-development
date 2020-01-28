@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_video_modal.field_image
+    - field.field.paragraph.media_video_modal.field_video
+    - image.style.x_small_square_1_1
+    - paragraphs.paragraphs_type.media_video_modal
+  module:
+    - media
+id: paragraph.media_video_modal.default
+targetEntityType: paragraph
+bundle: media_video_modal
+mode: default
+content:
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: x_small_square_1_1
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+  field_video:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: x_small_square_1_1
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
+hidden: {  }

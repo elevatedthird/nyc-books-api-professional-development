@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: media_video_modal
+label: 'Media - Video Modal'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

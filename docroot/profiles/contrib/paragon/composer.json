@@ -1,0 +1,10 @@
+{
+  "name": "drupal/paragon",
+  "description": "",
+  "type": "drupal-profile",
+  "homepage:": "https://www.drupal.org/project/paragon",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/paragon"
+  },
+  "license": "GPL-2.0-or-later"
+}

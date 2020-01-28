@@ -1,0 +1,40 @@
+# google fonts
+#fonts:
+#  css:
+#    theme:
+#      '//fonts.googleapis.com/css?family=Lato:400,700,400italic': { type: external, minified: true }
+
+# typekit
+#typekit:
+#  version: 1.x
+#  header: true
+#  js:
+#    //use.typekit.net/ydi4zcl.js: { every_page: true }
+#    js/vendor/typekit.js: { every_page: true }
+
+starterkit:
+  version: VERSION
+  js:
+    js/vendor/nodeListForEachPolyfill.js: {}
+#    dist/commons.js: {}
+    dist/starterkit.js: {}
+  css:
+    theme:
+      dist/style.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/modernizr
+    - starterkit/babel-polyfill
+
+babel-polyfill:
+  version: 1.x
+  js:
+    dist/polyfill.js: {}
+
+# Define additional sub-apps here. Be sure to first add it
+# as an entry point in webpack.config.js
+#myApp:
+#  version: 1.x
+#  js:
+#    js/dist/myApp.js: {}

@@ -1,0 +1,7 @@
+services:
+  logger.channel.nyc:
+    parent: logger.channel_base
+    arguments: ['nyc']
+  nyc.client:
+    class: Drupal\nyc\NYCClient
+    arguments: ['@entity_type.manager']

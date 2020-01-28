@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.media_video_modal.field_image
+    - field.field.paragraph.media_video_modal.field_video
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.media_video_modal
+  module:
+    - media
+id: paragraph.media_video_modal.preview
+targetEntityType: paragraph
+bundle: media_video_modal
+mode: preview
+content:
+  field_image:
+    type: media_thumbnail
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+  field_video:
+    type: media_thumbnail
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    third_party_settings: {  }
+hidden: {  }

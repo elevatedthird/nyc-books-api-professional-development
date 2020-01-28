@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Contains jdp_greenhouse_api.module.
+ */
+
+use Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException;
+use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\nyc\NYCClient;
+
+/**
+ * Implements hook_help().
+ */
+function nyc_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.nyc':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Imports LIST DETAILS from BOOK API NYTimes') . '</p>';
+      return $output;
+    default:
+  }
+}
+
+
+/**
+ * Archive items
+ *
+ * Implements hook_cron().
+ */
+function nyc_cron() {
+
+  $apiClient = new  NYCClient();
+  $request = $apiClient->getList();
+  $results = $request['results'];
+  foreach($results as $r) {
+    $list_names[] = $r['list_name'];
+  }
+  \Drupal::logger('nyc')->notice('Daily night check Cron ');
+  foreach ($list_names as $list) {
+    try {
+      $node = \Drupal::entityTypeManager()
+        ->getStorage('node')
+        ->loadByProperties(['title' => $list, 'type' => 'list']);
+    } catch (InvalidPluginDefinitionException $e) {
+    } catch (PluginNotFoundException $e) {
+    }
+    $node = reset($node);
+    //Code to update or create job opening on cron run
+    $queue = \Drupal::queue('nyc_upsert_book_cron');
+    if ($node == false) {
+      $queue->createItem([$list => NULL]);
+    } else {
+      $queue->createItem([$list => $node->id()]);
+    }
+  }
+}

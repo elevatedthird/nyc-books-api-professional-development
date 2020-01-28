@@ -1,0 +1,6 @@
+name: NYC Book API
+type: module
+core: 8.x
+package: 'nyc'
+description: Book API from new york times
+

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.main_address.field_address
+    - site_settings.site_setting_entity_type.main_address
+  module:
+    - address
+id: site_setting_entity.main_address.default
+targetEntityType: site_setting_entity
+bundle: main_address
+mode: default
+content:
+  field_address:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+hidden:
+  fieldset: true
+  name: true
+  user_id: true

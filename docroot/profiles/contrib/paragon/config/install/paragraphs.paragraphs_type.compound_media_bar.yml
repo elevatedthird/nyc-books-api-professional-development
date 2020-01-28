@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: compound_media_bar
+label: 'Compound - Media Bar'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
